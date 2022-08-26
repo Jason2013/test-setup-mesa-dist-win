@@ -1,0 +1,13 @@
+name: CI
+
+on: push
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["windows-latest"]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: lkeegan/setup-mesa-dist-win@v1
