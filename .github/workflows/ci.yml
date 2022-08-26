@@ -7,14 +7,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: ["windows-latest", "ubuntu-latest"]
+        os: ["windows-latest", "ubuntu-latest", "macos-latest"]
     steps:
       - uses: actions/checkout@v3
-      - uses: lkeegan/setup-mesa-dist-win@v1
-      - run: ls
-      - uses: lkeegan/setup-mesa-dist-win@v1
+      - uses: ssciwr/setup-mesa-dist-win@v1
+      - uses: ssciwr/setup-mesa-dist-win@v1
         with:
           version: '22.1.6'
           build-type: 'release-mingw'
           deployment-choice: '5'
-      - run: ls
